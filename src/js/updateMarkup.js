@@ -33,3 +33,9 @@ const pageCounter = {
 
 export default updateMurkup;
 export { pageCounter };
+
+refs.button.addEventListener('click', loadMoreImg);
+
+function loadMoreImg(e) {
+  console.log('button', e.currentTarget);
+}

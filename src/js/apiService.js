@@ -13,7 +13,7 @@ function apiService() {
       console.log('this.pageNumber', pageCounter.pageNumber);
       return res.json();
     })
-    .then(data => data.hits)
+    .then(({ hits }) => hits)
     .catch(error => console.warn(error));
 }
 

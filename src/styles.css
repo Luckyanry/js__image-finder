@@ -31,21 +31,22 @@ body {
   margin: 30px auto;
 }
 
-#search {
+input {
   width: 600px;
   height: 40px;
-  border: 3px ridge #c26801;
+  border: 3px ridge #f1b979;
   border-radius: 5px;
   padding: 0 10px;
-  box-shadow: 10px 10px 5px #9b9b99c0;
+  box-shadow: 8px 8px 8px #6b6b69c0;
 }
 
 .image {
-  border: 10px ridge #c26801;
+  display: block;
+  border: 10px ridge #f1b979;
   border-radius: 15px;
-  box-shadow: 10px 10px 5px #9b9b99c0;
+  box-shadow: 10px 10px 10px #9b9b99c0;
   background-position: center;
-  margin-bottom: 10px;
+  margin: 0 auto 10px;
 }
 
 .stats {
@@ -62,4 +63,21 @@ body {
 
 .material-icons {
   vertical-align: sub;
+}
+
+.js_btn {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #9b9b99c0;
+  background-color: #f1b979;
+  cursor: pointer;
+  margin: 0 auto 40px;
 }
