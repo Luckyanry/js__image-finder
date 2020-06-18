@@ -1,10 +1,6 @@
 import debounce from 'lodash.debounce';
-import { objApiService } from './apiService';
-
-export const refs = {
-  articleWrapper: document.querySelector('.gallery'),
-  input: document.querySelector('.search-form'),
-};
+import { pageCounter } from './updateMarkup';
+import { refs } from './refs';
 
 function handleInput(e) {
   e.preventDefault();
@@ -13,10 +9,10 @@ function handleInput(e) {
 
   const input = e.target.value;
 
-  objApiService.setSearchQuery(input);
+  pageCounter.setSearchQuery(input);
 
   if (input === '') {
-    objApiService.resetPage();
+    pageCounter.resetPage();
   }
 }
 
