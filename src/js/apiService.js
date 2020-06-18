@@ -1,5 +1,6 @@
 import galleryTpl from '../templates/gallery.hbs';
 import { refs } from './searchQuery';
+import makeFetch from './workDom';
 
 const apiKey = 'key=17099288-437936b9b4e8db26f206878a3';
 const pixabayURL = 'https://pixabay.com/api/';
@@ -15,16 +16,15 @@ export const objApiService = {
         apiKey,
     )
       .then(res => {
-        // if (hits.length === 0) return;
-        console.log('res', res);
-
-        this.pageNumber += 1;
-
         console.log('this.pageNumber', this.pageNumber);
+
         return res.json();
       })
       .then(({ hits }) => {
         console.log('hits', hits);
+
+        this.pageNumber += 1;
+
         if (hits.length === 0) {
           this.pageNumber -= 1;
           return console.log('Uppsss');
@@ -37,8 +37,6 @@ export const objApiService = {
   },
 
   setSearchQuery(searchQuery) {
-    console.log('searchQuery', searchQuery);
-
     this.findWord = searchQuery;
     this.apiService();
   },

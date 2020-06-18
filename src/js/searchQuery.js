@@ -3,7 +3,7 @@ import { objApiService } from './apiService';
 
 export const refs = {
   articleWrapper: document.querySelector('.gallery'),
-  input: document.querySelector('#search'),
+  input: document.querySelector('.search-form'),
 };
 
 function handleInput(e) {
@@ -13,9 +13,11 @@ function handleInput(e) {
 
   const input = e.target.value;
 
-  // objApiService.apiService(input);
   objApiService.setSearchQuery(input);
-  // objApiService.resetPage();
+
+  if (input === '') {
+    objApiService.resetPage();
+  }
 }
 
 refs.input.addEventListener('input', debounce(handleInput, 500));
