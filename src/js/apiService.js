@@ -15,7 +15,7 @@ export const objApiService = {
         apiKey,
     )
       .then(res => {
-        // if (res.hits.length === 0) return;
+        // if (hits.length === 0) return;
         console.log('res', res);
 
         this.pageNumber += 1;
@@ -25,7 +25,10 @@ export const objApiService = {
       })
       .then(({ hits }) => {
         console.log('hits', hits);
-        if (hits.length === 0) return console.log('Uppsss');
+        if (hits.length === 0) {
+          this.pageNumber -= 1;
+          return console.log('Uppsss');
+        }
 
         const murkup = galleryTpl(hits);
         refs.articleWrapper.insertAdjacentHTML('beforeend', murkup);
