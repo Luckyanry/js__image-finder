@@ -17,19 +17,20 @@ function handleInput(e) {
 }
 
 refs.input.addEventListener('input', debounce(handleInput, 500));
-
 refs.button.addEventListener('click', () => {
-  pageCounter.setSearchQuery(pageCounter.searchQuery);
+  const crossAxis = document.documentElement.offsetHeight - 100;
 
-  // window.scroll({
-  //   top: 1000,
-  //   behavior: 'smooth',
-  // });
+  setTimeout(() => {
+    window.scrollTo({
+      top: crossAxis,
+    });
+  }, 500);
+
+  pageCounter.setSearchQuery(pageCounter.searchQuery);
 });
 
 refs.scrollBtn.addEventListener('click', () => {
   window.scroll({
     top: 100,
-    behavior: 'smooth',
   });
 });
