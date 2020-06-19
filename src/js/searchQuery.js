@@ -1,5 +1,5 @@
 import debounce from 'lodash.debounce';
-import { pageCounter } from './updateMarkup';
+import { pageCounter } from './pageCounter';
 import { refs } from './refs';
 
 function handleInput(e) {
@@ -7,13 +7,16 @@ function handleInput(e) {
 
   refs.articleWrapper.innerHTML = '';
 
-  const input = e.target.value;
+  let input = e.target.value;
 
+  pageCounter.resetPage();
   pageCounter.setSearchQuery(input);
 
-  if (input === '') {
-    pageCounter.resetPage();
-  }
+  e.target.value = '';
 }
 
-refs.input.addEventListener('input', debounce(handleInput, 500));
+refs.input.addEventListener('input', debounce(handleInput, 600));
+
+refs.button.addEventListener('click', () => {
+  pageCounter.setSearchQuery(pageCounter.searchQuery);
+});
