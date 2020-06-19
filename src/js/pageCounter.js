@@ -1,5 +1,6 @@
 import apiService from './apiService';
 import updateMurkup from './updateMarkup';
+import { refs } from './refs';
 
 const pageCounter = {
   pageNumber: 1,

@@ -10,7 +10,7 @@ function apiService() {
       apiKey,
   )
     .then(res => {
-      console.log('this.pageNumber', pageCounter.pageNumber);
+      console.log('Page: ', pageCounter.pageNumber);
       return res.json();
     })
     .then(({ hits }) => hits)

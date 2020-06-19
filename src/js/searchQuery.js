@@ -2,6 +2,10 @@ import debounce from 'lodash.debounce';
 import { pageCounter } from './pageCounter';
 import { refs } from './refs';
 
+refs.input.addEventListener('input', debounce(handleInput, 500));
+refs.button.addEventListener('click', loadMoreBtn);
+refs.scrollUpBtn.addEventListener('click', scrollUpBtn);
+
 function handleInput(e) {
   e.preventDefault();
 
@@ -16,21 +20,20 @@ function handleInput(e) {
   e.target.value = '';
 }
 
-refs.input.addEventListener('input', debounce(handleInput, 500));
-refs.button.addEventListener('click', () => {
+function loadMoreBtn() {
   const crossAxis = document.documentElement.offsetHeight - 100;
 
   setTimeout(() => {
     window.scrollTo({
       top: crossAxis,
     });
-  }, 500);
+  }, 600);
 
   pageCounter.setSearchQuery(pageCounter.searchQuery);
-});
+}
 
-refs.scrollBtn.addEventListener('click', () => {
+function scrollUpBtn() {
   window.scroll({
     top: 100,
   });
-});
+}
