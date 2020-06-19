@@ -72,6 +72,7 @@ input {
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
+  text-shadow: 1px 1px 0px #a56363;
   width: 150px;
   height: 40px;
   border: none;
@@ -80,4 +81,24 @@ input {
   background-color: #f1b979;
   cursor: pointer;
   margin: 0 auto 40px;
+}
+
+.btn_hidden {
+  display: none;
+}
+
+.scroll_btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  height: 50px;
+  width: 50px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #a56363;
+  box-shadow: 5px 5px 3px #9b9b99c0;
+  border-radius: 50%;
+  background-color: #f1b979;
+  cursor: pointer;
 }

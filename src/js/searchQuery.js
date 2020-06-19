@@ -7,7 +7,8 @@ function handleInput(e) {
 
   refs.articleWrapper.innerHTML = '';
 
-  let input = e.target.value;
+  const input = e.target.value;
+  refs.button.classList.add('btn_hidden');
 
   pageCounter.resetPage();
   pageCounter.setSearchQuery(input);
@@ -15,8 +16,20 @@ function handleInput(e) {
   e.target.value = '';
 }
 
-refs.input.addEventListener('input', debounce(handleInput, 600));
+refs.input.addEventListener('input', debounce(handleInput, 500));
 
 refs.button.addEventListener('click', () => {
   pageCounter.setSearchQuery(pageCounter.searchQuery);
+
+  // window.scroll({
+  //   top: 1000,
+  //   behavior: 'smooth',
+  // });
+});
+
+refs.scrollBtn.addEventListener('click', () => {
+  window.scroll({
+    top: 100,
+    behavior: 'smooth',
+  });
 });
