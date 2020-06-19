@@ -37,8 +37,13 @@ input {
   height: 40px;
   border: 3px ridge #f1b979;
   border-radius: 5px;
-  padding: 0 10px;
+  outline: none;
   box-shadow: 8px 8px 8px #6b6b69c0;
+  padding: 0 10px;
+}
+
+input:hover {
+  border: 3px solid #a56363;
 }
 
 .image {
@@ -80,6 +85,7 @@ input {
   border-radius: 10px;
   box-shadow: 5px 5px 5px #9b9b99c0;
   background-color: #f1b979;
+  outline: none;
   cursor: pointer;
   margin: 0 auto 40px;
 }
@@ -101,5 +107,11 @@ input {
   box-shadow: 5px 5px 3px #9b9b99c0;
   border-radius: 50%;
   background-color: #f1b979;
+  outline: none;
   cursor: pointer;
+}
+
+.js_btn:hover,
+.scroll_btn:hover {
+  background-color: #a56363;
 }
